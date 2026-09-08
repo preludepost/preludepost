@@ -2,6 +2,7 @@
   background-color: var(--color-neutral);
   padding-block: var(--space-16);
   border-top: 1px solid rgba(212, 197, 179, 0.3);
+  scroll-margin-top: calc(var(--topbar-height) + 1rem);
 }
 
 .container {

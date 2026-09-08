@@ -4,7 +4,7 @@ import styles from "./PreWeddingEvents.module.css";
 
 export default function PreWeddingEvents() {
   return (
-    <section className={styles.section} aria-labelledby="prewedding-heading">
+    <section className={styles.section} aria-labelledby="prewedding-heading" id="events">
       <div className={styles.container}>
         <h2 className={styles.heading} id="prewedding-heading">
           Pre-Wedding Events

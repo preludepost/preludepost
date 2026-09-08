@@ -40,6 +40,8 @@ export default function HomePage() {
         style={{
           opacity: envelopeOpened || !mounted ? 1 : 0,
           transition: "opacity 0.8s ease-in-out",
+          overflowX: "hidden",
+          width: "100%",
         }}
       >
         <TopAppBar />

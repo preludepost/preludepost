@@ -1,6 +1,7 @@
 .section {
   background-color: var(--color-white);
   padding-block: var(--space-16);
+  scroll-margin-top: calc(var(--topbar-height) + 1rem);
 }
 
 .container {
@@ -31,10 +32,13 @@
   background: var(--color-white);
   box-shadow: var(--shadow-md);
   transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transform: translateZ(0);
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  backface-visibility: hidden;
 }
 
 .card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
   box-shadow: var(--shadow-lg);
 }
 
@@ -42,15 +46,22 @@
 .imageWrapper {
   position: relative;
   height: 200px;
+  overflow: hidden;
+  background-color: #2d2d2d;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  transform: translateZ(0);
 }
 
 .cardImage {
   object-fit: cover;
-  transition: transform 0.6s ease;
+  transform: scale(1.01);
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: center center;
+  will-change: transform;
 }
 
 .card:hover .cardImage {
-  transform: scale(1.05);
+  transform: scale(1.07);
 }
 
 /* Gradient overlay on image */

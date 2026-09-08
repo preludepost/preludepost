@@ -1,6 +1,7 @@
 .section {
   background-color: var(--color-neutral);
   padding-block: var(--space-12);
+  scroll-margin-top: calc(var(--topbar-height) + 1rem);
 }
 
 .container {
@@ -45,8 +46,23 @@
 }
 
 .cardIcon {
-  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-full);
+  background-color: rgba(184, 151, 90, 0.08);
+  border: 1px solid rgba(184, 151, 90, 0.2);
+  color: var(--color-gold);
   margin-bottom: var(--space-2);
+  transition: all var(--transition-base);
+}
+
+.card:hover .cardIcon {
+  background-color: rgba(184, 151, 90, 0.15);
+  border-color: var(--color-gold);
+  transform: scale(1.05);
 }
 
 .cardTitle {
@@ -147,7 +163,16 @@
 }
 
 .modalIcon {
-  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background-color: rgba(184, 151, 90, 0.1);
+  border: 1px solid rgba(184, 151, 90, 0.25);
+  color: var(--color-gold);
+  flex-shrink: 0;
 }
 
 .modalTitle {

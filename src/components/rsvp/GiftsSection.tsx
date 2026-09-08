@@ -2,7 +2,7 @@ import styles from "./GiftsSection.module.css";
 
 export default function GiftsSection() {
   return (
-    <section className={styles.section} aria-labelledby="gifts-heading">
+    <section className={styles.section} aria-labelledby="gifts-heading" id="gifts">
       <div className={styles.container}>
         <div className={styles.ornament} aria-hidden="true">
           ✦

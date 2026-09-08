@@ -91,6 +91,8 @@
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
 }
 
 body {
@@ -104,6 +106,9 @@ body {
   /* Space for fixed top/bottom nav */
   padding-top: var(--topbar-height);
   padding-bottom: var(--bottomnav-height);
+  overflow-x: hidden;
+  max-width: 100%;
+  position: relative;
 }
 
 /* Remove body padding on envelope screen */

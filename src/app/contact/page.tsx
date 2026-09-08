@@ -4,6 +4,7 @@ import TopAppBar from "@/components/common/TopAppBar";
 import BottomNavBar from "@/components/common/BottomNavBar";
 import Footer from "@/components/common/Footer";
 import { WEDDING } from "@/lib/constants";
+import { EnvelopeConfirmedIcon, HotelIcon, ConciergeKeyIcon } from "@/components/common/ThemeIcons";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -45,7 +46,9 @@ export default function ContactPage() {
                 gap: "var(--space-3)",
               }}
             >
-              <div style={{ fontSize: "1.75rem" }} aria-hidden="true">✉️</div>
+              <div style={{ color: "var(--color-gold)", display: "flex", alignItems: "center" }} aria-hidden="true">
+                <EnvelopeConfirmedIcon size={32} color="var(--color-gold)" />
+              </div>
               <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-xl)", color: "var(--color-primary)" }}>
                 RSVP &amp; General Queries
               </h2>
@@ -76,7 +79,9 @@ export default function ContactPage() {
                 gap: "var(--space-3)",
               }}
             >
-              <div style={{ fontSize: "1.75rem" }} aria-hidden="true">🏛️</div>
+              <div style={{ color: "var(--color-gold)", display: "flex", alignItems: "center" }} aria-hidden="true">
+                <HotelIcon size={32} color="var(--color-gold)" />
+              </div>
               <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-xl)", color: "var(--color-primary)" }}>
                 Venue &amp; Front Desk
               </h2>
@@ -110,7 +115,9 @@ export default function ContactPage() {
                 gap: "var(--space-3)",
               }}
             >
-              <div style={{ fontSize: "1.75rem" }} aria-hidden="true">🏨</div>
+              <div style={{ color: "var(--color-gold)", display: "flex", alignItems: "center" }} aria-hidden="true">
+                <ConciergeKeyIcon size={32} color="var(--color-gold)" />
+              </div>
               <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "var(--text-xl)", color: "var(--color-primary)" }}>
                 Hotel &amp; Room Block Concierge
               </h2>

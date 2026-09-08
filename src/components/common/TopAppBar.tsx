@@ -8,11 +8,11 @@ import styles from "./TopAppBar.module.css";
 
 const MENU_LINKS = [
   { href: "/", label: "Home & Welcome" },
-  { href: "/events", label: "Pre-Wedding Events" },
+  { href: "/events#events", label: "Pre-Wedding Events" },
   { href: "/events#venue", label: "Venue & Directions" },
   { href: "/events#logistics", label: "Accommodation & Shuttles" },
   { href: "/celebrate#dress-code", label: "Dress Code" },
-  { href: "/celebrate", label: "RSVP Form" },
+  { href: "/celebrate#rsvp", label: "RSVP Form" },
   { href: "/celebrate#gifts", label: "Gifts & Blessings" },
   { href: "/contact", label: "Contact Concierge" },
   { href: "/privacy", label: "Privacy Notice" },
@@ -21,6 +21,30 @@ const MENU_LINKS = [
 export default function TopAppBar() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const [currentHash, setCurrentHash] = useState("");
+
+  // Keep track of current hash
+  useEffect(() => {
+    setCurrentHash(window.location.hash);
+    const handleHashChange = () => {
+      setCurrentHash(window.location.hash);
+    };
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, [pathname]);
+
+  // Scroll to hash target on navigation or page load
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.hash) {
+      const id = window.location.hash.replace("#", "");
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 120);
+      }
+    }
+  }, [pathname]);
 
   // Close menu on pathname change
   useEffect(() => {
@@ -54,7 +78,45 @@ export default function TopAppBar() {
 
   const closeMenu = useCallback(() => {
     setIsOpen(false);
+    document.body.style.overflow = "";
   }, []);
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    closeMenu();
+
+    if (href.includes("#")) {
+      const [linkPath, linkHash] = href.split("#");
+      const isCurrentPage = linkPath === pathname || (linkPath === "" && pathname === "/");
+
+      if (isCurrentPage) {
+        e.preventDefault();
+        const targetElement = document.getElementById(linkHash);
+        if (targetElement) {
+          document.body.style.overflow = "";
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: "smooth", block: "start" });
+            window.history.pushState(null, "", `#${linkHash}`);
+            setCurrentHash(`#${linkHash}`);
+          }, 60);
+        }
+      } else {
+        setCurrentHash(`#${linkHash}`);
+      }
+    } else {
+      if (href === pathname) {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      setCurrentHash("");
+    }
+  };
+
+  const isLinkActive = (href: string) => {
+    if (href.includes("#")) {
+      const [linkPath, linkHash] = href.split("#");
+      return pathname === linkPath && currentHash === `#${linkHash}`;
+    }
+    return pathname === href && (!currentHash || currentHash === "#");
+  };
 
   return (
     <>
@@ -75,18 +137,23 @@ export default function TopAppBar() {
         </button>
 
         {/* Couple name (center) */}
-        <Link href="/" className={styles.brandName} aria-label="Home" onClick={closeMenu}>
+        <Link
+          href="/"
+          className={styles.brandName}
+          aria-label="Home"
+          onClick={(e) => handleLinkClick(e, "/")}
+        >
           {WEDDING.couple.displayName}
         </Link>
 
         {/* RSVP button (right) */}
         <Link
-          href="/celebrate"
+          href="/celebrate#rsvp"
           className={styles.rsvpBtn}
           aria-label="RSVP for the wedding"
           id="topbar-rsvp-button"
           aria-current={pathname === "/celebrate" ? "page" : undefined}
-          onClick={closeMenu}
+          onClick={(e) => handleLinkClick(e, "/celebrate#rsvp")}
         >
           RSVP
         </Link>
@@ -125,8 +192,8 @@ export default function TopAppBar() {
               <li key={link.href} className={styles.drawerItem}>
                 <Link
                   href={link.href}
-                  className={`${styles.drawerLink} ${pathname === link.href ? styles.drawerLinkActive : ""}`}
-                  onClick={closeMenu}
+                  className={`${styles.drawerLink} ${isLinkActive(link.href) ? styles.drawerLinkActive : ""}`}
+                  onClick={(e) => handleLinkClick(e, link.href)}
                 >
                   <span className={styles.linkDiamond}>◆</span>
                   <span>{link.label}</span>

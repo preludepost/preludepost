@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WEDDING, SITE } from "@/lib/constants";
+import { SITE } from "@/lib/constants";
 import styles from "./Footer.module.css";
 
 export default function Footer() {
@@ -17,8 +17,6 @@ export default function Footer() {
           We can&apos;t wait to celebrate with you!
         </p>
 
-        <p className={styles.coupleNames}>{WEDDING.couple.displayName}</p>
-        <p className={styles.weddingDate}>{WEDDING.ceremony.displayDate}</p>
 
         {/* Footer links */}
         <nav className={styles.links} aria-label="Footer navigation">

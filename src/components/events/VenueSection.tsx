@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { WEDDING } from "@/lib/constants";
+import { MapPinIcon } from "@/components/common/ThemeIcons";
 import styles from "./VenueSection.module.css";
 
 export default function VenueSection() {
   return (
-    <section className={styles.section} aria-labelledby="venue-heading">
+    <section className={styles.section} aria-labelledby="venue-heading" id="venue">
       <div className={styles.container}>
         {/* Image side */}
         <div className={styles.imageWrapper}>
@@ -37,7 +38,9 @@ export default function VenueSection() {
             id="venue-maps-button"
             aria-label="View The Taj Mahal Palace on Google Maps"
           >
-            <span className={styles.mapIcon} aria-hidden="true">📍</span>
+            <span className={styles.mapIcon} aria-hidden="true">
+              <MapPinIcon size={16} color="currentColor" />
+            </span>
             View on Google Maps
           </a>
         </div>

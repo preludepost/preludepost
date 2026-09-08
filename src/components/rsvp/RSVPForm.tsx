@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { WEDDING } from "@/lib/constants";
 import { sanitizeInput, isValidEmail } from "@/lib/utils";
+import { EnvelopeConfirmedIcon } from "@/components/common/ThemeIcons";
 import type { RSVPFormData, SubmitStatus } from "@/types";
 import styles from "./RSVPForm.module.css";
 
@@ -130,7 +131,9 @@ export default function RSVPForm() {
   if (status === "success") {
     return (
       <div className={styles.successMessage} role="alert" aria-live="polite">
-        <div className={styles.successIcon} aria-hidden="true">✉️</div>
+        <div className={styles.successIcon} aria-hidden="true">
+          <EnvelopeConfirmedIcon size={52} color="var(--color-gold)" />
+        </div>
         <h3 className={styles.successTitle}>Thank you!</h3>
         <p className={styles.successText}>
           {submittedAttendance === "yes"
@@ -150,7 +153,7 @@ export default function RSVPForm() {
   }
 
   return (
-    <section className={styles.section} aria-labelledby="rsvp-heading">
+    <section className={styles.section} aria-labelledby="rsvp-heading" id="rsvp">
       <div className={styles.card}>
         {/* Header */}
         <div className={styles.cardHeader}>
@@ -250,7 +253,7 @@ export default function RSVPForm() {
                 onClick={() => handleAttendance("yes")}
                 aria-pressed={formData.attendance === "yes"}
               >
-                Yes, I&apos;ll be there! 🎉
+                Yes, I&apos;ll be there!
               </button>
               <button
                 type="button"

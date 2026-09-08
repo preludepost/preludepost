@@ -1,6 +1,7 @@
 .section {
   background-color: var(--color-white);
   padding-block: var(--space-16);
+  scroll-margin-top: calc(var(--topbar-height) + 1rem);
 }
 
 .card {

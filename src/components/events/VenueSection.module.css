@@ -1,6 +1,7 @@
 .section {
   background-color: var(--color-neutral);
   padding-block: var(--space-16);
+  scroll-margin-top: calc(var(--topbar-height) + 1rem);
 }
 
 .container {

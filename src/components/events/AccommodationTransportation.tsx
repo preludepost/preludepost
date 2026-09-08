@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { WEDDING } from "@/lib/constants";
+import { HotelIcon, ShuttleIcon } from "@/components/common/ThemeIcons";
 import styles from "./AccommodationTransportation.module.css";
 
 export default function AccommodationTransportation() {
@@ -41,7 +42,9 @@ export default function AccommodationTransportation() {
         <div className={styles.grid}>
           {/* Accommodation card */}
           <div className={styles.card} id="accommodation-card">
-            <div className={styles.cardIcon} aria-hidden="true">🛏</div>
+            <div className={styles.cardIcon} aria-hidden="true">
+              <HotelIcon size={34} color="var(--color-gold)" />
+            </div>
             <h3 className={styles.cardTitle}>Accommodation</h3>
             <p className={styles.cardDesc}>{WEDDING.accommodation.description}</p>
             <div className={styles.codeWrapper} aria-label={`Promo code: ${WEDDING.accommodation.promoCode}`}>
@@ -52,7 +55,9 @@ export default function AccommodationTransportation() {
 
           {/* Transportation card */}
           <div className={styles.card} id="transportation-card">
-            <div className={styles.cardIcon} aria-hidden="true">🚌</div>
+            <div className={styles.cardIcon} aria-hidden="true">
+              <ShuttleIcon size={34} color="var(--color-gold)" />
+            </div>
             <h3 className={styles.cardTitle}>Transportation</h3>
             <p className={styles.cardDesc}>{WEDDING.transportation.description}</p>
             <button
@@ -84,7 +89,9 @@ export default function AccommodationTransportation() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className={styles.modalHeader}>
-              <div className={styles.modalIcon} aria-hidden="true">🚌</div>
+              <div className={styles.modalIcon} aria-hidden="true">
+                <ShuttleIcon size={26} color="var(--color-gold)" />
+              </div>
               <h3 id="modal-schedule-title" className={styles.modalTitle}>
                 Complimentary Shuttle Schedule
               </h3>
