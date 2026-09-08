@@ -1,0 +1,99 @@
+.footer {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+  padding-block: var(--space-10);
+  text-align: center;
+}
+
+.inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  width: 100%;
+  max-width: 240px;
+  margin-bottom: var(--space-4);
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(212, 197, 179, 0.4);
+}
+
+.dividerHeart {
+  color: var(--color-gold);
+  font-size: var(--text-lg);
+}
+
+.tagline {
+  font-size: var(--text-sm);
+  color: rgba(212, 197, 179, 0.8);
+  font-weight: 300;
+}
+
+.coupleNames {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-secondary);
+  letter-spacing: 0.05em;
+}
+
+.weddingDate {
+  font-size: var(--text-xs);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: var(--space-2);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
+}
+
+.link {
+  font-size: var(--text-xs);
+  color: rgba(212, 197, 179, 0.6);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: color var(--transition-fast);
+}
+
+.link:hover {
+  color: var(--color-secondary);
+}
+
+.dot {
+  color: rgba(212, 197, 179, 0.3);
+  font-size: var(--text-xs);
+}
+
+.brand {
+  font-size: var(--text-xs);
+  color: rgba(212, 197, 179, 0.4);
+  margin-top: var(--space-4);
+  letter-spacing: 0.04em;
+}
+
+.brandLink {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.brandLink:hover {
+  color: var(--color-gold-light);
+}

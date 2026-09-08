@@ -1,0 +1,115 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Image wrapper fills the entire section */
+.imageWrapper {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Multi-stop overlay: dark at top/bottom, lighter in middle */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(30, 25, 20, 0.55) 0%,
+    rgba(30, 25, 20, 0.15) 40%,
+    rgba(30, 25, 20, 0.15) 60%,
+    rgba(30, 25, 20, 0.65) 100%
+  );
+}
+
+/* Text content */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: var(--color-white);
+  padding-inline: var(--container-padding);
+  animation: fadeInUp 1s ease both;
+  animation-delay: 0.3s;
+}
+
+.preTitle {
+  font-size: var(--text-xs);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: var(--space-4);
+  font-weight: 300;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 9vw, 5.5rem);
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--color-white);
+  letter-spacing: 0.02em;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  margin-bottom: var(--space-5);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+  max-width: 200px;
+  margin-inline: auto;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.dividerSymbol {
+  font-size: 8px;
+  color: var(--color-gold-light);
+}
+
+.date {
+  font-size: var(--text-lg);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  font-weight: 400;
+  margin-bottom: var(--space-2);
+}
+
+.venue {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-1);
+}
+
+.location {
+  font-size: var(--text-sm);
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

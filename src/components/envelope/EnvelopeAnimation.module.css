@@ -1,0 +1,324 @@
+/* ─────────────────────────────────────────────
+   Envelope Animation Styles
+   ───────────────────────────────────────────── */
+
+/* Full-screen overlay */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.overlayFadeOut {
+  opacity: 0;
+  transform: translateY(40px);
+  pointer-events: none;
+}
+
+/* Ivory gradient background */
+.background {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+      ellipse at 30% 20%,
+      rgba(212, 197, 179, 0.35) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse at 70% 80%,
+      rgba(138, 154, 138, 0.15) 0%,
+      transparent 60%
+    ),
+    linear-gradient(160deg, #faf8f4 0%, #f5f1ea 40%, #f0ece3 100%);
+}
+
+/* Floating gold particles */
+.particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--color-gold-light), transparent);
+  opacity: 0;
+  animation: particleFloat 6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.5s);
+  left: calc(var(--i) * 8% + 4%);
+  top: calc(80% - var(--i) * 4%);
+}
+
+@keyframes particleFloat {
+  0%   { opacity: 0; transform: translateY(0) scale(1); }
+  30%  { opacity: 0.6; }
+  70%  { opacity: 0.4; }
+  100% { opacity: 0; transform: translateY(-120px) scale(0.4); }
+}
+
+/* ── Envelope wrapper ── */
+.envelopeWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  height: 240px;
+}
+
+/* ── Rising invitation card (behind envelope) ── */
+.invitationCard {
+  position: absolute;
+  width: 300px;
+  bottom: 30px;
+  z-index: 1;
+  background: linear-gradient(160deg, #fefdfb 0%, #f9f6f0 100%);
+  border: 1px solid rgba(212, 197, 179, 0.6);
+  border-radius: 4px;
+  padding: var(--space-6) var(--space-8);
+  text-align: center;
+  box-shadow: 0 2px 24px rgba(45, 45, 45, 0.12);
+  transform: translateY(60px);
+  opacity: 0;
+  transition: transform 0.7s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease;
+  transition-delay: 0.2s;
+}
+
+.invitationCardVisible {
+  transform: translateY(-20px);
+  opacity: 1;
+}
+
+.cardPreText {
+  font-size: var(--text-xs);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-3);
+}
+
+.cardTitle {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  color: var(--color-primary);
+  line-height: 1.15;
+}
+
+.cardDivider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-block: var(--space-3);
+}
+
+.cardDividerLine {
+  flex: 1;
+  height: 1px;
+  background: var(--color-secondary);
+}
+
+.cardDiamondIcon {
+  color: var(--color-gold);
+  font-size: 8px;
+}
+
+.cardDate {
+  font-size: var(--text-sm);
+  letter-spacing: 0.1em;
+  color: var(--color-gold);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+.cardVenue {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+}
+
+/* ── The Envelope ── */
+.envelope {
+  position: absolute;
+  width: 340px;
+  height: 220px;
+  z-index: 2;
+  cursor: pointer;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease;
+}
+
+.envelope:hover:not(.envelopeOpening) {
+  transform: translateY(-6px) scale(1.01);
+}
+
+/* Back panel */
+.envelopeBack {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #f5efe6 0%, #ede6da 100%);
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(45, 45, 45, 0.18), 0 2px 8px rgba(45, 45, 45, 0.1);
+  border: 1px solid rgba(212, 197, 179, 0.7);
+}
+
+/* Left side flap */
+.flapLeft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 110px 0 0 170px;
+  border-color: transparent transparent transparent #e8e0d2;
+  filter: drop-shadow(1px 0 1px rgba(45,45,45,0.06));
+}
+
+/* Right side flap */
+.flapRight {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 110px 170px;
+  border-color: transparent transparent #e8e0d2 transparent;
+  filter: drop-shadow(-1px 0 1px rgba(45,45,45,0.06));
+}
+
+/* Bottom flap */
+.flapBottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 170px 100px 170px;
+  border-color: transparent transparent #ede5d8 transparent;
+}
+
+/* Top flap (animated) */
+.flapTop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 110px 170px 0 170px;
+  border-color: #dfd6c8 transparent transparent transparent;
+  transform-origin: top center;
+  transform-style: preserve-3d;
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 3;
+}
+
+.flapTopOpen {
+  transform: rotateX(-180deg);
+}
+
+/* ── Wax Seal ── */
+.seal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #c9a46e, #8b6a35);
+  box-shadow:
+    0 2px 8px rgba(139, 106, 53, 0.45),
+    inset 0 1px 2px rgba(255, 255, 255, 0.3),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: sealPulse 2.8s ease-in-out infinite;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.seal::before {
+  content: "";
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Decorative outer ring on seal */
+.seal::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1px solid rgba(184, 151, 90, 0.35);
+  animation: sealRing 3s ease-in-out infinite;
+}
+
+@keyframes sealPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 2px 8px rgba(139, 106, 53, 0.45), inset 0 1px 2px rgba(255,255,255,0.3); }
+  50%       { transform: translate(-50%, -50%) scale(1.06); box-shadow: 0 4px 20px rgba(139, 106, 53, 0.55), inset 0 1px 2px rgba(255,255,255,0.3); }
+}
+
+@keyframes sealRing {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%       { opacity: 0.8; transform: scale(1.08); }
+}
+
+.sealFade {
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+  animation: none;
+}
+
+.sealInitials {
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.92);
+  letter-spacing: 0.05em;
+  user-select: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Tap hint ── */
+.tapHint {
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+  animation: hintFade 2s ease-in-out infinite;
+}
+
+.tapHint::before,
+.tapHint::after {
+  content: "—";
+  margin-inline: var(--space-3);
+  color: var(--color-secondary);
+}
+
+@keyframes hintFade {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 1; }
+}

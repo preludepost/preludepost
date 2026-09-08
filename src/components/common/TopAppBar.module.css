@@ -1,0 +1,232 @@
+.topBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--topbar-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--space-4);
+  background-color: rgba(249, 247, 242, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+  transition: background-color var(--transition-base);
+}
+
+.brandName {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-primary);
+  letter-spacing: 0.03em;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.brandName:hover {
+  color: var(--color-gold);
+}
+
+.menuBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: opacity var(--transition-fast);
+}
+
+.menuBtn:hover {
+  opacity: 0.7;
+}
+
+.menuLine {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background-color: var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: transform var(--transition-base), opacity var(--transition-base);
+}
+
+.menuBtnActive .menuLine:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+
+.menuBtnActive .menuLine:nth-child(2) {
+  opacity: 0;
+}
+
+.menuBtnActive .menuLine:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+.rsvpBtn {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary);
+  padding: var(--space-2) var(--space-4);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.rsvpBtn:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ── Backdrop ── */
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(45, 45, 45, 0.4);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 110;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.backdropVisible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Drawer ── */
+.drawer {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: min(320px, 85vw);
+  background-color: var(--color-neutral);
+  border-right: 1px solid var(--color-border);
+  box-shadow: var(--shadow-xl);
+  z-index: 120;
+  transform: translateX(-100%);
+  transition: transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.drawerOpen {
+  transform: translateX(0);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-5) var(--space-6);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.drawerMonogram {
+  font-family: var(--font-heading);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+}
+
+.closeBtn {
+  font-size: 1.25rem;
+  color: var(--color-text-muted);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.closeBtn:hover {
+  color: var(--color-primary);
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.drawerNav {
+  flex: 1;
+  padding: var(--space-4) 0;
+}
+
+.drawerList {
+  display: flex;
+  flex-direction: column;
+}
+
+.drawerItem {
+  list-style: none;
+}
+
+.drawerLink {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-primary);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.drawerLink:hover {
+  color: var(--color-gold);
+  background-color: rgba(184, 151, 90, 0.08);
+  padding-left: calc(var(--space-6) + 4px);
+}
+
+.drawerLinkActive {
+  color: var(--color-gold);
+  font-weight: 600;
+  background-color: rgba(184, 151, 90, 0.05);
+}
+
+.linkDiamond {
+  font-size: 0.5rem;
+  color: var(--color-gold);
+  opacity: 0.6;
+}
+
+.drawerFooter {
+  padding: var(--space-6);
+  border-top: 1px solid var(--color-border);
+  background-color: rgba(232, 224, 214, 0.25);
+  text-align: center;
+}
+
+.drawerDate {
+  font-family: var(--font-heading);
+  font-size: var(--text-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.drawerVenue {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}

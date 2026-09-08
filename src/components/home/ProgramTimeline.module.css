@@ -1,0 +1,100 @@
+.section {
+  background-color: var(--color-neutral);
+  padding-block: var(--space-16);
+}
+
+.container {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+.heading {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-weight: 500;
+  text-align: center;
+  color: var(--color-primary);
+  margin-bottom: var(--space-12);
+}
+
+/* Timeline layout */
+.timeline {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.timelineItem {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  align-items: flex-start;
+  min-height: 80px;
+}
+
+/* Left / Right columns */
+.side {
+  padding-block: var(--space-3);
+}
+
+.sideLeft {
+  text-align: right;
+  padding-right: var(--space-5);
+}
+
+.sideRight {
+  text-align: left;
+  padding-left: var(--space-5);
+}
+
+.eventName {
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-style: italic;
+  margin-bottom: var(--space-1);
+}
+
+.eventDesc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-weight: 300;
+  line-height: 1.5;
+}
+
+.eventTime {
+  font-size: var(--text-xs);
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  padding-top: var(--space-3);
+}
+
+/* Center column: dot + line */
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: var(--space-3);
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--color-primary);
+  border: 2px solid var(--color-neutral);
+  box-shadow: 0 0 0 2px var(--color-secondary);
+  flex-shrink: 0;
+  z-index: 1;
+}
+
+.line {
+  width: 1.5px;
+  flex: 1;
+  min-height: 50px;
+  background: linear-gradient(to bottom, var(--color-secondary), transparent);
+  margin-top: var(--space-2);
+}
