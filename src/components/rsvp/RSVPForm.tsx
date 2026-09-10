@@ -194,7 +194,7 @@ export default function RSVPForm() {
                 name="fullName"
                 type="text"
                 className={`form-input ${errors.fullName ? "error" : ""}`}
-                placeholder="e.g. Priya Singh"
+                placeholder={WEDDING.rsvp.placeholderName}
                 value={formData.fullName}
                 onChange={handleChange}
                 maxLength={100}
@@ -218,7 +218,7 @@ export default function RSVPForm() {
                 name="email"
                 type="email"
                 className={`form-input ${errors.email ? "error" : ""}`}
-                placeholder="hello@example.com"
+                placeholder={WEDDING.rsvp.placeholderEmail}
                 value={formData.email}
                 onChange={handleChange}
                 maxLength={100}

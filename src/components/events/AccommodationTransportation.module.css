@@ -255,8 +255,17 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 680px) {
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .card {
+    padding: var(--space-6) var(--space-4);
+  }
+
+  .modalCard {
+    margin-inline: var(--space-3);
   }
 }

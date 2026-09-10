@@ -5,11 +5,11 @@ import Footer from "@/components/common/Footer";
 import DressCodeSection from "@/components/rsvp/DressCodeSection";
 import RSVPForm from "@/components/rsvp/RSVPForm";
 import GiftsSection from "@/components/rsvp/GiftsSection";
+import { WEDDING } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "RSVP & Dress Code",
-  description:
-    "Kindly RSVP for Veer & Zara's wedding celebration and discover the dress code guidelines.",
+  description: `Kindly RSVP for ${WEDDING.couple.displayName}'s wedding celebration and discover the dress code guidelines.`,
 };
 
 export default function CelebratePage() {

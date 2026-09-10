@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE.name}`,
   },
   description: SITE.description,
-  keywords: ["wedding", "invitation", "Veer", "Zara", "Taj Mahal Palace", "Mumbai", "2027"],
+  keywords: ["wedding", "invitation", SITE.name, "Grand Empire Marquee", "Lahore", "2027"],
   authors: [{ name: "PreludePost", url: SITE.url }],
   creator: "PreludePost",
   metadataBase: new URL(SITE.url),

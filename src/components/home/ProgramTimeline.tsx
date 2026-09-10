@@ -17,8 +17,8 @@ export default function ProgramTimeline() {
               role="listitem"
               id={`timeline-item-${item.id}`}
             >
-              {/* Left side: event name + description (odd) or time (even) */}
-              <div className={`${styles.side} ${styles.sideLeft}`}>
+              {/* Left side (Desktop only) */}
+              <div className={`${styles.side} ${styles.sideLeft} ${styles.desktopSide}`}>
                 {index % 2 === 0 ? (
                   <>
                     <h3 className={styles.eventName}>{item.event}</h3>
@@ -37,8 +37,8 @@ export default function ProgramTimeline() {
                 )}
               </div>
 
-              {/* Right side: time (odd) or event name (even) */}
-              <div className={`${styles.side} ${styles.sideRight}`}>
+              {/* Right side (Desktop only) */}
+              <div className={`${styles.side} ${styles.sideRight} ${styles.desktopSide}`}>
                 {index % 2 === 0 ? (
                   <p className={styles.eventTime}>{item.startTime}</p>
                 ) : (
@@ -47,6 +47,13 @@ export default function ProgramTimeline() {
                     <p className={styles.eventDesc}>{item.description}</p>
                   </>
                 )}
+              </div>
+
+              {/* Mobile content (Stacked cleanly beside the line) */}
+              <div className={styles.mobileContent}>
+                <p className={styles.eventTime}>{item.startTime}</p>
+                <h3 className={styles.eventName}>{item.event}</h3>
+                <p className={styles.eventDesc}>{item.description}</p>
               </div>
             </div>
           ))}

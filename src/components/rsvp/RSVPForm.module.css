@@ -78,9 +78,14 @@
   border: 1px solid rgba(212, 197, 179, 0.5);
   background: var(--color-neutral);
   color: var(--color-primary);
+  border-radius: var(--radius-md);
   cursor: pointer;
   transition: all var(--transition-fast);
   text-align: center;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .attendanceBtn:hover {
@@ -89,24 +94,43 @@
 }
 
 .attendanceBtnActive {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-color: var(--color-primary);
+  background-color: #d2ddd0;
+  color: #243823;
+  border-color: #9cb399;
+  font-weight: 500;
 }
 
 .attendanceBtnActive:hover {
-  background-color: #1a1a1a;
-  border-color: #1a1a1a;
+  background-color: #c5d3c3;
+  border-color: #8da78a;
 }
 
 .attendanceBtnDecline {
   background-color: #f5ecec;
   color: #7a3a3a;
   border-color: #e0bebe;
+  font-weight: 500;
 }
 
 .attendanceBtnDecline:hover {
   background-color: #fae4e4;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-block: var(--space-10);
+    padding-inline: var(--space-3);
+  }
+
+  .card {
+    padding: var(--space-6) var(--space-4);
+    border-radius: var(--radius-xl);
+  }
+
+  .attendanceGroup {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
 }
 
 .submitBtn {

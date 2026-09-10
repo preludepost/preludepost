@@ -112,7 +112,7 @@ export default function EnvelopeAnimation({ onComplete }: EnvelopeAnimationProps
             <span className={styles.cardDividerLine} />
           </div>
           <p className={styles.cardDate}>{WEDDING.ceremony.displayDate}</p>
-          <p className={styles.cardVenue}>{WEDDING.venue.name}, Mumbai</p>
+          <p className={styles.cardVenue}>{WEDDING.venue.name}, {WEDDING.venue.city}</p>
         </div>
 
         {/* The envelope */}
@@ -152,7 +152,7 @@ export default function EnvelopeAnimation({ onComplete }: EnvelopeAnimationProps
             className={`${styles.seal} ${phase !== "idle" ? styles.sealFade : ""}`}
             aria-hidden="true"
           >
-            <span className={styles.sealInitials}>V&amp;Z</span>
+            <span className={styles.sealInitials}>{WEDDING.couple.monogram}</span>
           </div>
 
           {/* Tap hint */}

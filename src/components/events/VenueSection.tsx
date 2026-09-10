@@ -36,7 +36,7 @@ export default function VenueSection() {
             rel="noopener noreferrer"
             className={styles.mapsBtn}
             id="venue-maps-button"
-            aria-label="View The Taj Mahal Palace on Google Maps"
+            aria-label={`View ${WEDDING.venue.name} on Google Maps`}
           >
             <span className={styles.mapIcon} aria-hidden="true">
               <MapPinIcon size={16} color="currentColor" />

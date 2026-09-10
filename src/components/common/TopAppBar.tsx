@@ -174,7 +174,7 @@ export default function TopAppBar() {
         aria-hidden={!isOpen}
       >
         <div className={styles.drawerHeader}>
-          <div className={styles.drawerMonogram}>V &amp; Z</div>
+          <div className={styles.drawerMonogram}>{WEDDING.couple.monogram}</div>
           <button
             type="button"
             className={styles.closeBtn}

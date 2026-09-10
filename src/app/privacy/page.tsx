@@ -44,7 +44,7 @@ export default function PrivacyPage() {
                 1. Private Celebration
               </h2>
               <p style={{ color: "var(--color-text-muted)" }}>
-                This website is a private digital invitation for invited family and friends celebrating the union of Veer and Zara. We do not track visitors for commercial purposes, serve third-party advertisements, or sell your data.
+                This website is a private digital invitation for invited family and friends celebrating the union of {WEDDING.couple.displayName}. We do not track visitors for commercial purposes, serve third-party advertisements, or sell your data.
               </p>
             </section>
 

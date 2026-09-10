@@ -113,3 +113,28 @@
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+@media (max-width: 600px) {
+  .title {
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
+    margin-bottom: var(--space-3);
+  }
+
+  .preTitle {
+    font-size: 0.65rem;
+    letter-spacing: 0.18em;
+    margin-bottom: var(--space-2);
+  }
+
+  .date {
+    font-size: var(--text-base);
+  }
+
+  .venue {
+    font-size: var(--text-lg);
+  }
+
+  .content {
+    padding-inline: var(--space-4);
+  }
+}

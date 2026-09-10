@@ -70,3 +70,30 @@
   font-size: var(--text-sm);
   color: var(--color-secondary);
 }
+
+/* Mobile view matching sample reference (desktop remains 100% untouched) */
+@media (max-width: 768px) {
+  .welcome {
+    background-color: #1a1a1a;
+    padding-block: var(--space-12);
+  }
+
+  .heartIcon {
+    color: var(--color-gold);
+    margin-bottom: var(--space-4);
+  }
+
+  .quote p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+  }
+
+  .quote em {
+    color: var(--color-gold-light);
+  }
+
+  .line {
+    background: linear-gradient(to right, transparent, rgba(212, 197, 179, 0.4), transparent);
+  }
+}

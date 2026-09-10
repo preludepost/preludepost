@@ -110,7 +110,7 @@ export default function AccommodationTransportation() {
               <div className={styles.scheduleItem}>
                 <span className={styles.scheduleBadge}>Route</span>
                 <p className={styles.scheduleText}>
-                  Partner Hotels (Colaba / Nariman Point) ⟷ {WEDDING.venue.name}
+                  {WEDDING.transportation.routeText}
                 </p>
               </div>
 

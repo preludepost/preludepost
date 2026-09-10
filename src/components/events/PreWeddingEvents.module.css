@@ -128,8 +128,17 @@
 
 /* Responsive: 1 column on mobile */
 @media (max-width: 640px) {
+  .section {
+    padding-block: var(--space-10);
+  }
+
   .grid {
     grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .imageWrapper {
+    height: 220px;
   }
 }
 

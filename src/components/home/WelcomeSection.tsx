@@ -1,3 +1,4 @@
+import { WEDDING } from "@/lib/constants";
 import styles from "./WelcomeSection.module.css";
 
 export default function WelcomeSection() {
@@ -7,13 +8,13 @@ export default function WelcomeSection() {
       <div className={styles.heartIcon} aria-hidden="true">♥</div>
 
       <h2 id="welcome-heading" className={styles.visuallyHidden}>
-        Welcome Message
+        {WEDDING.welcome.heading}
       </h2>
 
       <blockquote className={styles.quote}>
         <p>
           &ldquo;We are honored to welcome you to the wedding ceremony of{" "}
-          <em>Veer &amp; Zara</em>. Join us as we celebrate a lifetime of love,
+          <em>{WEDDING.couple.displayName}</em>. Join us as we celebrate a lifetime of love,
           joy, and shared dreams. Your presence will make our special day truly{" "}
           <em>unforgettable</em>.&rdquo;
         </p>

@@ -1,76 +1,88 @@
 /**
- * Wedding constants — all wedding-specific data lives here.
- * Update this file to change any wedding details across the entire site.
+ * Wedding constants — single source of truth.
+ * Update this file to change any wedding details (names, venue, dates, events, descriptions, etc.)
+ * across the entire site instantly.
  */
 
 export const WEDDING = {
   couple: {
-    bride: "Zara",
-    groom: "Veer",
-    displayName: "Veer & Zara",
+    bride: "Zumar",
+    groom: "Faris",
+    displayName: "Faris & Zumar",
+    monogram: "F & Z",
     tagline: "Two Souls, One Journey",
   },
 
   ceremony: {
-    date: new Date("2027-06-30T10:00:00+05:30"),
+    name: "Nikkah Ceremony",
+    date: new Date("2027-06-30T10:00:00+05:00"),
     displayDate: "June 30, 2027",
     displayTime: "10:00 AM",
+  },
+
+  welcome: {
+    heading: "Welcome Message",
+    quote:
+      "We are honored to welcome you to the wedding ceremony of Faris & Zumar. Join us as we celebrate a lifetime of love, joy, and shared dreams. Your presence will make our special day truly unforgettable.",
   },
 
   preweddingEvents: [
     {
       id: "mehndi",
-      name: "Mahendi",
+      name: "Mehndi",
       date: "Jun 27",
       time: "9:30 PM",
       description:
-        "An evening of intricate henna art, music, and mingling to kick off the celebrations.",
+        "An evening of vibrant henna, dhol beats, and joyful dancing to kick off the celebrations.",
       image: "/images/mehndi.png",
       imageAlt: "Mehndi ceremony with intricate henna art",
     },
     {
-      id: "haldi",
-      name: "Haldi",
+      id: "mayoun",
+      name: "Mayoun",
       date: "Jun 28",
       time: "8:30 PM",
       description:
-        "A joyous morning ritual filled with color, laughter, and blessings.",
+        "A traditional oil ceremony blessing the bride and groom ahead of their big day.",
       image: "/images/haldi.png",
-      imageAlt: "Haldi ceremony with turmeric and flowers",
+      imageAlt: "Mayoun traditional oil ceremony and blessings",
     },
     {
-      id: "sangeet",
-      name: "Sangeet",
+      id: "dholki",
+      name: "Dholki",
       date: "Jun 29",
       time: "9:00 PM",
       description:
-        "A night of dazzling performances, music, and dancing under the stars.",
+        "An evening of dhol, singing, and old wedding songs among close family and friends.",
       image: "/images/sangeet.png",
-      imageAlt: "Sangeet night with dance performances",
+      imageAlt: "Dholki night with traditional singing and dhol beats",
     },
   ],
 
   venue: {
-    name: "The Taj Mahal Palace",
+    name: "Grand Empire Marquee",
+    city: "Lahore, Pakistan",
     subtitle: "The Main Event",
-    address: "Apollo Bunder, Colaba, Mumbai, Maharashtra 400001, India",
+    address:
+      "H92J+87Q, Saddar Gol Chakar, Karachi Mohalla Old Officers Colony, Lahore, Pakistan",
     image: "/images/venue.png",
-    imageAlt: "The Taj Mahal Palace, Mumbai at night",
+    imageAlt: "Grand Empire Marquee, Lahore",
     googleMapsUrl:
-      "https://maps.google.com/?q=Taj+Mahal+Palace+Hotel+Mumbai",
+      "https://www.google.com/maps?vet=10CAAQoqAOahcKEwjwy8WhmuGWAxUAAAAAHQAAAAAQBQ..i&pvq=Cg0vZy8xMXF2Y3I1M3BxIhUKD3dlZGRpbmcgbWFycXVlZRACGAM&lqi=CiJ3ZWRkaW5nIG1hcnF1ZWUgaW4gcGFraXN0YW4gbGFob3JlSLadyrvptoCACFosEAAQARgBGAQiIndlZGRpbmcgbWFycXVlZSBpbiBwYWtpc3RhbiBsYWhvcmWSAQtldmVudF92ZW51ZZoBI0NoWkRTVWhOTUc5blMwVkpRMEZuU1VSNE9UZEhkbGhSRUFF-gEECAAQQQ&fvr=1&cs=1&um=1&ie=UTF-8&fb=1&gl=pk&sa=X&geocode=KW3q7KgZBRk5McQWdcszkh-e&daddr=H92J%2B87Q,+Saddar+Gol+Chakar,+Karachi+Mohalla+Old+Officers+Colony,+Lahore",
   },
 
   accommodation: {
-    hotelName: "Taj Mahal Palace",
-    promoCode: "WEDDING2026",
+    hotelName: "Preferred Partner Hotels",
+    promoCode: "FARISZUMAR27",
     description:
-      "We have arranged a block of rooms at the Taj Mahal Palace for our guests' convenience.",
+      "We have arranged preferred partner room bookings in Lahore for our travelling guests' convenience.",
   },
 
   transportation: {
     description:
-      "Complimentary shuttle service will be provided between partner hotels and the venue throughout the weekend.",
+      "Complimentary shuttle service will be provided between partner hotels and Grand Empire Marquee throughout the celebrations.",
     scheduleNote: "Shuttles depart every 30 minutes from 8:00 PM onwards.",
+    routeText: "Partner Hotels (Cantt / Gulberg, Lahore) ⟷ Grand Empire Marquee",
   },
 
   timeline: [
@@ -82,34 +94,36 @@ export const WEDDING = {
     },
     {
       id: "ceremony",
-      event: "Wedding Ceremony",
-      description: "The exchange of vows.",
+      event: "Nikkah Ceremony",
+      description: "Islamic marriage contract and exchange of vows.",
       startTime: "JUN 30 · 11:30 AM",
     },
     {
       id: "reception",
       event: "Reception",
-      description: "Dinner, drinks, and dancing.",
+      description: "Dinner, drinks, and celebrating together.",
       startTime: "JUL 1 · 7:30 PM",
     },
   ],
 
   rsvp: {
     deadline: "June 1, 2027",
-    email: "veerandzara2027@gmail.com",
+    email: "farisandzumar2027@gmail.com",
+    placeholderName: "e.g. Hamza Malik",
+    placeholderEmail: "hello@example.com",
   },
 
   dressCode: {
     women:
-      "Elegant formal attire in pastel or jewel tones. Sarees, lehengas, and gowns are all welcome.",
-    men: "Suit or traditional formal wear — sherwanis, bandhgalas, and blazers encouraged.",
+      "Elegant formal attire in delicate pastel shades or rich jewel tones. Traditional formals, lehengas, and sarees are all welcome.",
+    men: "Classic suit or traditional formal wear — sherwanis, prince coats, and bandhgalas encouraged.",
     note: "We kindly request guests to avoid white and black.",
   },
 };
 
 export const SITE = {
-  name: "Veer & Zara",
+  name: WEDDING.couple.displayName,
   url: "https://preludepost.com",
-  description:
-    "You are cordially invited to celebrate the wedding of Veer and Zara on June 30, 2027 at The Taj Mahal Palace, Mumbai.",
+  description: `You are cordially invited to celebrate the wedding of ${WEDDING.couple.displayName} on ${WEDDING.ceremony.displayDate} at ${WEDDING.venue.name}, ${WEDDING.venue.city}.`,
 };
+

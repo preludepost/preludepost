@@ -9,7 +9,7 @@ export default function HeroSection() {
       <div className={styles.imageWrapper}>
         <Image
           src="/images/hero.png"
-          alt="Veer and Zara's wedding ceremony — an elegant outdoor aisle adorned with white flowers and draped fabric"
+          alt={`${WEDDING.couple.displayName}'s wedding celebration venue — an elegant floral aisle with draped fabric`}
           fill
           priority
           quality={90}
@@ -34,7 +34,7 @@ export default function HeroSection() {
 
         <p className={styles.date}>{WEDDING.ceremony.displayDate}</p>
         <p className={styles.venue}>{WEDDING.venue.name}</p>
-        <p className={styles.location}>Mumbai, India</p>
+        <p className={styles.location}>{WEDDING.venue.city}</p>
       </div>
     </section>
   );
