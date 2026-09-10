@@ -8,8 +8,8 @@ export const WEDDING = {
   couple: {
     bride: "Zumar",
     groom: "Faris",
-    displayName: "Faris & Zumar",
-    monogram: "F & Z",
+    displayName: "Zumar & Faris",
+    monogram: "Z & F",
     tagline: "Two Souls, One Journey",
   },
 
@@ -23,7 +23,7 @@ export const WEDDING = {
   welcome: {
     heading: "Welcome Message",
     quote:
-      "We are honored to welcome you to the wedding ceremony of Faris & Zumar. Join us as we celebrate a lifetime of love, joy, and shared dreams. Your presence will make our special day truly unforgettable.",
+      "We are honored to welcome you to the wedding ceremony of Zumar & Faris. Join us as we celebrate a lifetime of love, joy, and shared dreams. Your presence will make our special day truly unforgettable.",
   },
 
   preweddingEvents: [
@@ -73,7 +73,7 @@ export const WEDDING = {
 
   accommodation: {
     hotelName: "Preferred Partner Hotels",
-    promoCode: "FARISZUMAR27",
+    promoCode: "ZUMARFARIS27",
     description:
       "We have arranged preferred partner room bookings in Lahore for our travelling guests' convenience.",
   },
@@ -108,7 +108,7 @@ export const WEDDING = {
 
   rsvp: {
     deadline: "June 1, 2027",
-    email: "farisandzumar2027@gmail.com",
+    email: "zumarandfaris2027@gmail.com",
     placeholderName: "e.g. Hamza Malik",
     placeholderEmail: "hello@example.com",
   },
