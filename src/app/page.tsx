@@ -38,7 +38,7 @@ export default function HomePage() {
       )}
       <div
         style={{
-          opacity: envelopeOpened || !mounted ? 1 : 0,
+          opacity: mounted && envelopeOpened ? 1 : 0,
           transition: "opacity 0.8s ease-in-out",
           overflowX: "hidden",
           width: "100%",
