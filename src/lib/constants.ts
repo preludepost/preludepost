@@ -123,7 +123,7 @@ export const WEDDING = {
 
 export const SITE = {
   name: WEDDING.couple.displayName,
-  url: "https://preludepost.com",
+  url: "https://zumarfaris.preludepost.com",
   description: `You are cordially invited to celebrate the wedding of ${WEDDING.couple.displayName} on ${WEDDING.ceremony.displayDate} at ${WEDDING.venue.name}, ${WEDDING.venue.city}.`,
 };
 
