@@ -1,6 +1,10 @@
+import path from "path";
+import { fileURLToPath } from "url";
 import { createRequire } from 'module';
 
 const require = createRequire(import.meta.url);
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /** @type {import('next').NextConfig} */
 const securityHeaders = [
@@ -45,6 +49,9 @@ const securityHeaders = [
 const nextConfig = {
   // Strict React mode for catching bugs early
   reactStrictMode: true,
+
+  // Pin workspace root to suppress "multiple lockfiles" warning
+  outputFileTracingRoot: __dirname,
 
   // Security headers applied to all routes
   async headers() {
